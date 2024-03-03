@@ -1,6 +1,13 @@
 const User = require("../models/User.model");
 const hashPassword = require("../utils/hashPass.util");
 
+/**
+ * @function getUser
+ * @description Returns the profile of the user
+ * @param {*} req
+ * @param {*} res
+ * @returns user profile
+ */
 const getUser = async (req, res) => {
   const { id } = req.user;
   const userProfile = await User.findById(id);
